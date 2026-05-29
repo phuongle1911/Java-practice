@@ -6,8 +6,6 @@ class Solution {
     String binary = Integer.toBinaryString(N);
     System.out.println("binary of num: " + binary);
     int maxGap = 0;
-    // int[] positionOf1 = {};
-    // int n = 0;
     ArrayList<Integer> positionOf1 = new ArrayList<Integer>();
 
     for (int i=0; i<binary.length();i++) {

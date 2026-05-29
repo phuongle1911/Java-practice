@@ -12,42 +12,31 @@ class arrayDeletion {
     // if odd index number < even index number next to it --> no change
     // else: delete odd index number
 
-    int i = 0;
-    int maxS;
-    int sumOdd = 0;
-    int sumEven = 0;
-    ArrayList<Integer> newArr = new ArrayList<Integer>();
-    while (i < A.length) {
-      if (i % 2 == 0) {   // number at even index
-        if (A[i] <= A[i+1]) {
-          i += 1;
+    int S = 0;
+    boolean peak = true;
 
-        } else {
-          newArr.add(A[i]);
-          sumEven += A[i];
-          i += 1;
-          
+    for (int i = 0; i<A.length-1; i++) {
+      if (peak) {
+        if (A[i] > A[i+1]) {
+          S += A[i];
+          peak = false;
         }
-      } else {  // number of odd index
-        if (A[i] >= A[i+1]) {
-          // remove A[i]
-        } else {
-          i += 1;
+      } else {
+        if (A[i+1] < A[i+2]) {
+          S = S - A[i+1];
+          peak = true;
         }
       }
     }
 
-    for (int x=0; x < A.length; x+2) {
-      sumEven += A[x];
-      sumOdd += A[x+1];
-
-      maxS = sumEven - sumOdd;
-    }
-    return maxS;
+    return S % 1000000000;
   }
 
   public static void main(String[] args) {
-    A = {}
+    int[] A = {1,2,3,3,2,1,5};
+    // 6 - (-5) + 3= 14
+    // 1 - 0 
+    System.out.println(solution(A));
   }
 
 }
