@@ -1,24 +1,24 @@
 package homework4;
 
+import java.util.HashSet;
+
 public class coverPrefix {
   public static int solution(int[] A) {
-    if (A.length == 1) {
-      return 1;
-    };
-
-    int x = A.length - 1;
-    while (x > 0) {
-      for (int i=0; i < x; i++) {
-        if (A[i] == A[x]) {
-          x--;
-          // end for loop
-        } else {
-          continue;
-        }
-      }
-      break;
+    if (A == null || A.length == 0) {
+      return 0;
     }
-    return (x+1);
+    HashSet<Integer> appeared = new HashSet<Integer>();
+    int prefix = 0;
+
+    for (int i=0; i<A.length; i++) {
+      
+      if (!appeared.contains(A[i])) {
+        appeared.add(A[i]);
+        prefix = i;
+      }
+    }
+
+    return prefix;
   }
 
 
