@@ -32,7 +32,7 @@ public class UserService {
 
         LocalDate validatedDOB = DataValidation.validateDate(dob); 
         User inputUser = new User(fName,lName,validatedDOB,username,pw);
-        UserController registerUser = new UserController("users.txt");
+        UserController registerUser = new UserController();
         registerUser.register(inputUser.formatUser());
 
         break;
@@ -42,7 +42,7 @@ public class UserService {
         int selection2 = input.nextInt();
         input.nextLine();
 
-        UserController showUser = new UserController("users.txt");
+        UserController showUser = new UserController();
 
         switch (selection2) {
           case 1:
@@ -69,7 +69,7 @@ public class UserService {
           System.out.println("Password:");
           String pwLogin = input.nextLine();        
 
-          UserController login = new UserController("users.txt");
+          UserController login = new UserController();
           boolean loginStatus = login.validateUser(usernameLogin, pwLogin);
           if (loginStatus) {
             System.out.println("Login successfully!");

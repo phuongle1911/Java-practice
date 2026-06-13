@@ -3,16 +3,13 @@ package homework5.OOP_v2.controllers;
 import homework5.OOP_v2.utils.FileHandling;
 
 public class UserController {
-  private String userFile;
+  private String userFile = "users.txt";
 
-  public UserController(String userFile) {
-    this.userFile = userFile;
-  };
 
-  private Object[] users() {
+  private String[] users() {
     FileHandling userFileHandler = new FileHandling();
     userFileHandler.filePath = userFile;
-    Object[] userArr = userFileHandler.fileRead(); 
+    String[] userArr = userFileHandler.fileRead(); 
     return userArr; 
   };
 

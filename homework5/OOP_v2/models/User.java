@@ -24,7 +24,7 @@ public class User {
 
   public String formatUser() {
 
-    String userDetail = firstName + ";" + lastName + ";" + dob.toString() + ";" + username + ";" + getPassword();
+    String userDetail = firstName + ";" + lastName + ";" + dob.toString() + ";" + username + ";" + password + "\n";
     return userDetail;
   };
 
