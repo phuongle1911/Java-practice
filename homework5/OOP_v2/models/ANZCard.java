@@ -8,8 +8,15 @@ public class ANZCard extends BaseCard {
   private static final String BANK = "ANZ";
 
   
-  public ANZCard(String cardNum, BigDecimal balance, String username) {
-    super(cardNum, BANK, balance, new BigDecimal(MIN_DEPOSIT), new BigDecimal(MAX_WITHDRAW), username);
+  public ANZCard() {
+    super.cardNum = cardNum;
+    super.balance = balance;
+    super.username = username;
+    super.minDeposit = new BigDecimal(MIN_DEPOSIT);
+    super.maxWithdraw = new BigDecimal(MAX_WITHDRAW);
+    super.bank = BANK;
+
+    
   }
   
 

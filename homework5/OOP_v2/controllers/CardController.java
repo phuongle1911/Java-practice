@@ -41,6 +41,7 @@ public class CardController {
   
   public void registerCard(String inputCardNum, String inputBank, String username) {
     String cardDetail = null;
+    BaseCard newCard;
 
     if (searchCard(inputCardNum)!= null) {
         System.out.println("Card already exists!");
@@ -49,27 +50,26 @@ public class CardController {
     FileHandling cardFileHandler = new FileHandling();
     cardFileHandler.filePath = cardFile;
 
+
     switch (inputBank.toUpperCase()) {
       case "ANZ":
-        ANZCard newANZCard = new ANZCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
-        cardDetail = newANZCard.formatCardDetail();
+        newCard = new ANZCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
         break;
 
       case "CMW":
-        CMWCard newCMWCard = new CMWCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
-        cardDetail = newCMWCard.formatCardDetail();
+        newCard = new CMWCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
         break;
 
       case "NAB":
-        NABCard newNABCard = new NABCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
-        cardDetail = newNABCard.formatCardDetail();
+        newCard = new NABCard(inputCardNum,new BigDecimal(MIN_BALANCE), username);
         break;
 
       default:
         System.out.println("Invalid card! Card must be NAB/ANZ/CMW");
         break;
     }
-
+    
+    cardDetail = newCard.formatCardDetail();
     cardFileHandler.fileWrite(cardDetail);
     System.out.println("Card registered successfully!");
 
@@ -84,7 +84,7 @@ public class CardController {
       String matchedCard = searchCard(inputCardNum);
       String[] parts = matchedCard.split(";");
 
-      if (depositAmount.compareTo(new BigDecimal(parts[3])) == ) {
+      if (depositAmount.compareTo(new BigDecimal(parts[3])) == -1 ) {
         System.out.println("Deposit amount must be higher than " + parts[3]);
       } else {
 

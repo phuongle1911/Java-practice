@@ -8,17 +8,17 @@ public class BaseCard {
   protected BigDecimal balance;
   protected BigDecimal minDeposit;
   protected BigDecimal maxWithdraw;
-  private String username;
+  protected String username;
 
 
-  public BaseCard(String cardNum, String bank, BigDecimal balance, BigDecimal minDeposit, BigDecimal maxWithdraw, String username) {
-    this.cardNum = cardNum;
-    this.bank = bank;
-    this.balance = balance;
-    this.minDeposit = minDeposit;
-    this.maxWithdraw = maxWithdraw;
-    this.username = username;
-  }
+  // public BaseCard(String cardNum, String bank, BigDecimal balance, BigDecimal minDeposit, BigDecimal maxWithdraw, String username) {
+  //   this.cardNum = cardNum;
+  //   this.bank = bank;
+  //   this.balance = balance;
+  //   this.minDeposit = minDeposit;
+  //   this.maxWithdraw = maxWithdraw;
+  //   this.username = username;
+  // }
 
   public void setCardNum(String cardNum) {
     this.cardNum = cardNum;
