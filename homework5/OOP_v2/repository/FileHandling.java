@@ -11,15 +11,18 @@ import java.util.Scanner;
 public class FileHandling {
   public String filePath;
 
-  public void fileWrite(String content) {
-    try (FileWriter writer = new FileWriter(filePath, true)) {
-      writer.write(content);
+  public void saveToFile(ArrayList<T> list, boolean append) {
+    try (FileWriter writer = new FileWriter(filePath, append)) {
+      for (int i; i<list.size(); i++) {
+        writer.write(list.get(i));
+        writer.newLine();
+      };
     } catch(IOException e) {
       System.out.println("error occurred when writing on file!");
     }
   };
 
-  public String[] fileRead() {
+  public String[] fileReadtoArray() {
     File fileToRead = new File(filePath);
     ArrayList<String> arrlist = new ArrayList<String>();
 
@@ -37,20 +40,20 @@ public class FileHandling {
     return arr;
   }
 
-  public void updateFileContent(String oldLine, String newLine) {
-    try (FileWriter writer = new FileWriter(filePath, false);) {
-      String[] lines = fileRead(); 
+  // public void updateFile(ArrayList<T> oldList, ArrayList<T>  newList) {
+  //   try (FileWriter writer = new FileWriter(filePath, false);) {
+  //     String[] lines = fileRead(); 
 
-      for (int i = 0; i < lines.length; i++) {
-        if (lines[i].equals(oldLine)) {
-          lines[i] = newLine;
-        }
-        writer.write(lines[i] + "\n");
-      }
-      System.out.println("file updated successfully!");
+  //     for (int i = 0; i < lines.length; i++) {
+  //       if (lines[i].equals(oldLine)) {
+  //         lines[i] = newLine;
+  //       }
+  //       writer.write(lines[i] + "\n");
+  //     }
+  //     System.out.println("file updated successfully!");
 
-    } catch (IOException e) {
-      System.out.println("Error occurred when updating content in file!");
-    }
-  }
+  //   } catch (IOException e) {
+  //     System.out.println("Error occurred when updating content in file!");
+  //  }
+  // }
 }

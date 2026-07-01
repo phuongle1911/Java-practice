@@ -8,8 +8,10 @@ public class CMWCard extends BaseCard {
   private static final String BANK = "CMW";
 
   
-  public CMWCard(String cardNum, BigDecimal balance, String username) {
-    super(cardNum, BANK, balance, new BigDecimal(MIN_DEPOSIT), new BigDecimal(MAX_WITHDRAW), username);
+  public CMWCard() {
+    super.minDeposit = new BigDecimal(MIN_DEPOSIT);
+    super.maxWithdraw = new BigDecimal(MAX_WITHDRAW);
+    super.bank = BANK;
   }
   
 

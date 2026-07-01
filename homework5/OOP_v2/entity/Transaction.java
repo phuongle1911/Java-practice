@@ -51,13 +51,13 @@ public class Transaction {
     this.amount = amount;
   }
 
-  public void transDescription() {
-    System.out.println("Card number: " + cardNum + "; Transaction: " + type + " " + amount + " at " + transTime);
-  }
+  // public void transDescription() {
+  //   System.out.println("Card number: " + cardNum + "; Transaction: " + type + " " + amount + " at " + transTime);
+  // }
 
-  public String formatTransInfo() {
-    return (cardNum + ";" + type + ";" + amount + ";" + transTime + "\n")
-  }
+  // public String formatTransInfo() {
+  //   return (cardNum + ";" + type + ";" + amount + ";" + transTime + "\n")
+  // }
 }
 
 

@@ -1,4 +1,4 @@
-package homework5.OOP_v2.models;
+package entity;
 
 import java.math.BigDecimal;
 
@@ -9,14 +9,9 @@ public class ANZCard extends BaseCard {
 
   
   public ANZCard() {
-    super.cardNum = cardNum;
-    super.balance = balance;
-    super.username = username;
     super.minDeposit = new BigDecimal(MIN_DEPOSIT);
     super.maxWithdraw = new BigDecimal(MAX_WITHDRAW);
     super.bank = BANK;
-
-    
   }
   
 

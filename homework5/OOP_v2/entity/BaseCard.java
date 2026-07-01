@@ -10,7 +10,7 @@ public class BaseCard {
   protected BigDecimal maxWithdraw;
   protected String username;
 
-
+  
   // public BaseCard(String cardNum, String bank, BigDecimal balance, BigDecimal minDeposit, BigDecimal maxWithdraw, String username) {
   //   this.cardNum = cardNum;
   //   this.bank = bank;
@@ -70,14 +70,14 @@ public class BaseCard {
   // }
   
 
-  public void showCardInfo() {
-    System.out.println("Your balance in " + cardNum + " on " + bank + " bank is " + String.format("%.2f", balance));
-  }
+  // public void showCardInfo() {
+  //   System.out.println("Your balance in " + cardNum + " on " + bank + " bank is " + String.format("%.2f", balance));
+  // }
 
-  public String formatCardDetail() {
-    String cardDetail = cardNum + ";" + bank + ";" + balance + ";" + minDeposit + ";" + maxWithdraw + ";" + username + "\n";
-    return cardDetail;
-  }
+  // public String formatCardDetail() {
+  //   String cardDetail = cardNum + ";" + bank + ";" + balance + ";" + minDeposit + ";" + maxWithdraw + ";" + username + "\n";
+  //   return cardDetail;
+  // }
 
 
 }

@@ -1,4 +1,4 @@
-package homework5.OOP_v2.models;
+package entity;
 
 import java.math.BigDecimal;
 
@@ -8,7 +8,10 @@ public class NABCard extends BaseCard {
   private static final String BANK = "NAB";
 
   
-  public NABCard(String cardNum, BigDecimal balance, String username) {
-    super(cardNum, BANK, balance, new BigDecimal(MIN_DEPOSIT), new BigDecimal(MAX_WITHDRAW), username);
+  public NABCard() {
+    super.minDeposit = new BigDecimal(MIN_DEPOSIT);
+    super.maxWithdraw = new BigDecimal(MAX_WITHDRAW);
+    super.bank = BANK;
   }
+
 }
