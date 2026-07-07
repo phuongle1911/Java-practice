@@ -1,38 +1,67 @@
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.LinkedList;
 
-public class frog_jump {
-  public static int solution(int[] A) {
-    List<Integer> fibList = new ArrayList<>();
 
-    fibList.add(0);
-    fibList.add(1);
-
-    int num=1;
-    int i = 2;
-    int jumpCount = 0;
-    int start;
-    while (num < A.length) {
-      num = fibList.get(i-1) + fibList.get(i-2);
-      fibList.add(num);
-      i++;
-    }
-
-    for (int x=A.length; x>=0; x--) {
-      step = x - start;
-      if (A[x] == 1 && Collections.binarySearch(fibList, x) >= 0) {
-        jumpCount += 1;
-        start = x;
-      }
-    }
-
+public static class Jump {
+  int position;
+  int move;
+  public Jump(int position, int move) {
+    this.position = position;
+    this.move = move;
   }
 
-  public static void main(String[] args) {
-    int[] A={0,0,0,1,1,0,1,0,0,0,0};
-    System.out.println(solution(A));
-  }
 }
+
+public static int solution(int[] A) {
+  ArrayList<Integer> fib = new ArrayList<>(); 
+
+  fib.add(0); // Time O1
+  fib.add(1); // Time O1
+
+  int i=1;
+  while (fib.get(i) <= A.length) { // O10 + O(n-10)*n; n=fib.length
+    fib.add(fib.get(i) + fib.get(i-1));
+    i++;
+  };
+
+
+  LinkedList<Jump> queue = new LinkedList<Jump>();
+  boolean[] visited = new boolean[A.length+1];
+
+  for (int j=2; j<fib.size()-1; j++) { // time On
+    int pos = fib.get(j) - 1;
+    if (A[pos] == 1) {
+      queue.add(new Jump(pos, 1)); // time O1
+      visited[pos] = true; // time O1
+    }
+
+    if (pos == A.length) {
+      return 1;
+    }
+  };
+
+
+  while (!queue.isEmpty()) { // O(n*e); e is number of element in queue need to loop through until condition met
+    Jump startPos = queue.remove(); //time O1
+    for (int k=1; k<fib.size()-1; k++) { // On
+      int nextPos = startPos.position + fib.get(k);
+      if (nextPos == A.length) {
+        return startPos.move+1;
+      } else if (nextPos < A.length && A[nextPos] == 1 && visited[nextPos] == false) {
+        queue.add(new Jump(nextPos, startPos.move+1)); // O1
+        visited[nextPos] = true; // O1
+      }
+
+    }
+  }
+
+  return -1;
+
+}
+
+public static void main(String[] args) {
+  int[] A={1,1,1,1,1,0,1,1,1,0,0};
+  System.out.println(solution(A));
+}
+
+// 0,1,0,0
