@@ -50,6 +50,8 @@ public static int solution(int[] A) {
       } else if (nextPos < A.length && A[nextPos] == 1 && visited[nextPos] == false) {
         queue.add(new Jump(nextPos, startPos.move+1)); // O1
         visited[nextPos] = true; // O1
+      } else if (nextPos > A.length) {
+        continue;
       }
 
     }
