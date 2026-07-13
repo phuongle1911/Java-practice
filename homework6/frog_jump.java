@@ -19,7 +19,7 @@ public static int solution(int[] A) {
   fib.add(1); // Time O1
 
   int i=1;
-  while (fib.get(i) <= A.length) { // O10 + O(n-10)*n; n=fib.length
+  while (fib.get(i) <= A.length) { // O1 + O(logn-10)*logn; n=A.length
     fib.add(fib.get(i) + fib.get(i-1));
     i++;
   };
@@ -28,7 +28,7 @@ public static int solution(int[] A) {
   LinkedList<Jump> queue = new LinkedList<Jump>();
   boolean[] visited = new boolean[A.length+1];
 
-  for (int j=2; j<fib.size()-1; j++) { // time On
+  for (int j=2; j<fib.size()-1; j++) { // time Ologn
     int pos = fib.get(j) - 1;
     if (A[pos] == 1) {
       queue.add(new Jump(pos, 1)); // time O1
@@ -41,9 +41,9 @@ public static int solution(int[] A) {
   };
 
 
-  while (!queue.isEmpty()) { // O(n*e); e is number of element in queue need to loop through until condition met
+  while (!queue.isEmpty()) { // O(n*logn); 
     Jump startPos = queue.remove(); //time O1
-    for (int k=1; k<fib.size()-1; k++) { // On
+    for (int k=1; k<fib.size()-1; k++) { // Ologn
       int nextPos = startPos.position + fib.get(k);
       if (nextPos == A.length) {
         return startPos.move+1;
@@ -60,6 +60,7 @@ public static int solution(int[] A) {
   return -1;
 
 }
+// time complexity: b=nlogn
 
 public static void main(String[] args) {
   int[] A={1,1,1,1,1,0,1,1,1,0,0};
