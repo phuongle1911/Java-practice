@@ -49,7 +49,7 @@ class deep_pit {
   }
 
   public static void main(String[] args) {
-    int[] A = {0,1,3,-2,0,1,0,-3,2,3};
+    int[] A = {0,5,4,-1,0,2,7,-3,2,3};
     System.out.println(solution(A));
   }
 }
