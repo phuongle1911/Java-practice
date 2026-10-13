@@ -1,0 +1,6 @@
+type Products @table {
+  name: String!
+  price:Int!
+  branch:String!
+}
+

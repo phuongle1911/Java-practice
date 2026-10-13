@@ -1,0 +1,48 @@
+I1012 22:07:41.755959   32701 load.go:31] Reloading schema and connectors...
+I1012 22:07:41.758960   32701 control.go:92] [projects/emulator/locations/emulator/services/product-db-1a75d-service a62c] UpdateResources(): done
+Main schema: sources: schema/schema.gql [0B] 
+Connector "example": sources: 
+E1012 22:07:41.761172   32701 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+I1012 22:07:41.761638   32701 collector.go:107] schema extensions wrote into "/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [84995B] 
+I1012 22:07:41.761689   32701 load.go:109] Finished reloading
+I1012 22:07:41.761905   32701 dev.go:103] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I1012 22:07:41.762006   32701 dev.go:103] Listening on address (HTTP + gRPC): [::1]:9399
+I1012 22:07:44.924885   32701 control.go:92] [projects/emulator/locations/emulator/services/product-db-1a75d-service 7f27] UpdateResources(): done
+Main schema: sources: schema/schema.gql [0B] 
+Connector "example": sources: 
+I1012 22:07:44.925969   32701 configure_emulator.go:21] ConfigureEmulator successed
+Request: service_id: "product-db-1a75d-service"
+connection_string: "postgres://127.0.0.1:5432/product-db-1a75d-database?sslmode=disable"
+database: "product-db-1a75d-database"
+
+Response: 
+I1012 22:10:21.773324   32701 load.go:31] Reloading schema and connectors...
+I1012 22:10:21.795764   32701 migrate.go:24] Running migration SQL:
+Step 1: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+Step 2: CREATE TABLE "public"."products" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "branch" text NOT NULL, "name" text NOT NULL, "price" integer NOT NULL, PRIMARY KEY ("id"))
+I1012 22:10:21.831164   32701 control.go:92] [projects/emulator/locations/emulator/services/product-db-1a75d-service bcc8] UpdateResources(): done
+Main schema: sources: schema/schema.gql [70B] 
+Connector "example": sources: 
+E1012 22:10:21.833208   32701 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+I1012 22:10:21.833754   32701 collector.go:107] schema extensions wrote into "/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema"
+Generated sources: main/input.gql [6664B] main/relation.gql [2744B] main/query.gql [1290B] main/mutation.gql [3455B] main/implicit.gql [263B] prelude.gql [84995B] 
+I1012 22:10:21.833766   32701 load.go:109] Finished reloading
+I1012 22:11:01.767506   32701 load.go:31] Reloading schema and connectors...
+I1012 22:11:01.819799   32701 control.go:92] [projects/emulator/locations/emulator/services/product-db-1a75d-service ca7a] UpdateResources(): done
+Main schema: sources: schema/ProductSchema.gql [70B] 
+Connector "example": sources: 
+E1012 22:11:01.822366   32701 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+I1012 22:11:01.823078   32701 collector.go:107] schema extensions wrote into "/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema"
+Generated sources: main/implicit.gql [263B] prelude.gql [84995B] main/input.gql [6664B] main/relation.gql [2744B] main/query.gql [1290B] main/mutation.gql [3455B] 
+I1012 22:11:01.823093   32701 load.go:109] Finished reloading
+I1012 22:41:13.947681   32701 execute.go:57] Database ping is quick (likely cached), took 2.474958ms
+I1012 22:41:13.958614   32701 engine.go:216] [projects/emulator/locations/emulator/services/product-db-1a75d-service ca7a] ExecuteGraphql mutation : succeeded. 
+I1013 20:51:42.277454   32701 load.go:31] Reloading schema and connectors...
+I1013 20:51:42.552992   32701 control.go:92] [projects/emulator/locations/emulator/services/product-db-1a75d-service 6a76] UpdateResources(): done
+Main schema: sources: schema/ProductSchema.gql [72B] 
+Connector "example": sources: 
+E1013 20:51:42.559043   32701 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+I1013 20:51:42.559902   32701 collector.go:107] schema extensions wrote into "/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema"
+Generated sources: main/input.gql [6664B] main/relation.gql [2744B] main/query.gql [1290B] main/mutation.gql [3455B] prelude.gql [84995B] main/implicit.gql [263B] 
+I1013 20:51:42.560349   32701 load.go:109] Finished reloading

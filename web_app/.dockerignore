@@ -1,0 +1,6 @@
+.env
+.gradle
+app/build
+
+**/build
+**/serviceAccKey.json

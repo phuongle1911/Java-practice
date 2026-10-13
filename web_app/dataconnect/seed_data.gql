@@ -1,0 +1,10 @@
+mutation @transaction {
+  products_insertMany(
+    data:  [
+      {name: "phone",price: 1000,branch: "Samsung"},
+      {name: "fridge",price: 1300,branch: "Phillip"},
+      {name: "phone",price: 1500,branch: "Iphone"},
+      {name: "air fryer",price: 320,branch: "Phillip"}
+      ]
+  )
+}

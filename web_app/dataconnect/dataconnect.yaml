@@ -1,0 +1,13 @@
+specVersion: "v1"
+serviceId: "product-db-1a75d-service"
+location: "australia-southeast2"
+schemas:
+  - source: "./schema"
+    datasource:
+      postgresql:
+        database: "product-db-1a75d-database"
+        cloudSql:
+          instanceId: "product-db-1a75d-instance"
+          # schemaValidation: "STRICT"     # STRICT mode makes Postgres schema match Data Connect exactly.
+          # schemaValidation: "COMPATIBLE" # COMPATIBLE mode makes Postgres schema compatible with Data Connect.
+connectorDirs: ["./example"]
