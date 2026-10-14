@@ -7,5 +7,10 @@ build
 .env
 
 **/serviceAccKey.json
-.dataconnect/
-example/
+**/.dataconnect
+**/example
+**/dataconnect-debug.log
+**/pglite-debug.log
+**/.dockerignore
+.vscode/
+

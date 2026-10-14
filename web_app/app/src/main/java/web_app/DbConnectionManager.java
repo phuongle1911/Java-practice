@@ -22,7 +22,6 @@ public class DbConnectionManager {
       final String instanceConnectionName = "product-db-1a75d:australia-southeast2:product-db-1a75d-instance";
       Properties props = new Properties();
       props.setProperty("user", requireEnv("DB_USER"));
-
       props.setProperty("password", requireEnv("DB_PASSWORD"));
       props.setProperty("cloudSqlInstance", instanceConnectionName);
       props.setProperty("socketFactory", "com.google.cloud.sql.postgres.SocketFactory");

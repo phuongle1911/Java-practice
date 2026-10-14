@@ -1,0 +1,48 @@
+[debug] [2026-10-14T08:38:26.519Z] [Firebase Plugin] Activating Firebase extension.
+[debug] [2026-10-14T08:38:28.877Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2026-10-14T08:38:28.877Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-14T08:38:28.877Z] > authorizing via signed-in user (phuongbk3@gmail.com)
+[debug] [2026-10-14T08:38:28.878Z] Checked if tokens are valid: false, expires at: 1791809621369
+[debug] [2026-10-14T08:38:28.878Z] Checked if tokens are valid: false, expires at: 1791809621369
+[debug] [2026-10-14T08:38:28.879Z] > refreshing access token with scopes: []
+[debug] [2026-10-14T08:38:28.879Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-14T08:38:28.879Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-14T08:38:28.887Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[info] [Firebase Plugin] Starting SQL Connect toolkit (version 3.4.16) on port 50001
+[info] i  dataconnect: downloading dataconnect-emulator-3.4.16... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-3.4.16..."}}
+[debug] [2026-10-14T08:38:28.986Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-macos-arm64-v3.4.16 
+[debug] [2026-10-14T08:38:29.526Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-14T08:38:29.526Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-14T08:38:29.538Z] [Firebase Plugin] User found:  phuongbk3@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2026-10-14T08:38:29.539Z] Checked if tokens are valid: true, expires at: 1791970708527
+[debug] [2026-10-14T08:38:29.539Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2026-10-14T08:38:30.000Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-macos-arm64-v3.4.16 200
+[debug] [2026-10-14T08:38:30.000Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-macos-arm64-v3.4.16 [stream]
+[debug] [2026-10-14T08:38:30.694Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-10-14T08:38:30.695Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  dataconnect: Removing outdated emulator files: dataconnect-emulator-3.4.22 {"metadata":{"emulator":{"name":"dataconnect"},"message":"Removing outdated emulator files: dataconnect-emulator-3.4.22"}}
+[debug] [2026-10-14T08:38:33.347Z] I1014 19:38:33.342774   88089 control.go:100] [projects/emulator/locations/emulator/services/product-db-1a75d-service 93a0] UpdateResources(): done
+Main schema: sources: schema/ProductSchema.gql [72B] 
+Connector "example": sources: 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.342774   88089 control.go:100] [projects/emulator/locations/emulator/services/product-db-1a75d-service 93a0] UpdateResources(): done\nMain schema: sources: schema/ProductSchema.gql [72B] \nConnector \"example\": sources: \n"}}
+[debug] [2026-10-14T08:38:33.348Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2026-10-14T08:38:33.348Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2026-10-14T08:38:33.348Z] Starting SQL Connect Emulator with command {"binary":"/Users/Phuong/.cache/firebase/emulators/dataconnect-emulator-3.4.16","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting SQL Connect Emulator with command {\"binary\":\"/Users/Phuong/.cache/firebase/emulators/dataconnect-emulator-3.4.16\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: SQL Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"SQL Connect Emulator logging to dataconnect-debug.log"}}
+[debug] [2026-10-14T08:38:33.372Z] I1014 19:38:33.371724   88094 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.371724   88094 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-10-14T08:38:33.376Z] I1014 19:38:33.376670   88094 control.go:100] [projects/emulator/locations/emulator/services/product-db-1a75d-service 743b] UpdateResources(): done
+Main schema: sources: schema/ProductSchema.gql [72B] 
+Connector "example": sources: 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.376670   88094 control.go:100] [projects/emulator/locations/emulator/services/product-db-1a75d-service 743b] UpdateResources(): done\nMain schema: sources: schema/ProductSchema.gql [72B] \nConnector \"example\": sources: \n"}}
+[debug] [2026-10-14T08:38:33.381Z] E1014 19:38:33.381641   88094 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E1014 19:38:33.381641   88094 load.go:95] Errors generating SDK: [connector \"example\"]: invalid Data Connect Connector no query found in connector\n"}}
+[debug] [2026-10-14T08:38:33.385Z] I1014 19:38:33.385147   88094 collector.go:107] schema extensions wrote into "/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema"
+Generated sources: main/mutation.gql [3455B] main/implicit.gql [263B] main/input.gql [6664B] main/relation.gql [2744B] main/query.gql [1290B] prelude.gql [84995B] 
+I1014 19:38:33.385216   88094 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.385147   88094 collector.go:107] schema extensions wrote into \"/Users/Phuong/Documents/Backend_class_CM/Java-homework/web_app/dataconnect/.dataconnect/schema\"\nGenerated sources: main/mutation.gql [3455B] main/implicit.gql [263B] main/input.gql [6664B] main/relation.gql [2744B] main/query.gql [1290B] prelude.gql [84995B] \nI1014 19:38:33.385216   88094 load.go:109] Finished reloading\n"}}
+[debug] [2026-10-14T08:38:33.386Z] I1014 19:38:33.386263   88094 dev.go:101] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.386263   88094 dev.go:101] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2026-10-14T08:38:33.825Z] I1014 19:38:33.825047   88094 engine.go:209] [projects/emulator/locations/emulator/services/product-db-1a75d-service 743b] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I1014 19:38:33.825047   88094 engine.go:209] [projects/emulator/locations/emulator/services/product-db-1a75d-service 743b] ExecuteGraphqlRead query IntrospectionQuery: succeeded. \n"}}

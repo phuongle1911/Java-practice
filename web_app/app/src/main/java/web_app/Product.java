@@ -1,21 +1,23 @@
-package main.java.web_app;
 
-public class Products {
-  private int id;
+import java.util.UUID;
+
+
+public class Product {
+  private UUID id;
   private String name;
   private double price;
   private String branch;
   
-  public Products(int id, String name, double price, String branch) {
+  public Product(UUID id, String name, double price, String branch) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.branch = branch;
   }
-  public int getId() {
+  public UUID getId() {
     return id;
   }
-  public void setId(int id) {
+  public void setId(UUID id) {
     this.id = id;
   }
   public String getName() {

@@ -1,9 +1,0 @@
-# get all products
-query ListProducts @auth(level: PUBLIC) {
-  productss {
-    id
-    name
-    price
-    branch
-  }
-}
