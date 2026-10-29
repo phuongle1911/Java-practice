@@ -12,3 +12,7 @@ build
 firebase-debug.log
 dataconnect-debug.log
 pglite-debug.log
+.dataconnect
+.vscode
+.firebase
+*/example

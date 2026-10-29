@@ -15,16 +15,26 @@ import jakarta.servlet.http.Cookie;
 public class UserDao {
   private final PasswordService passwordService = new PasswordService();
   public int create(String username, int id, String password) throws SQLException {
+    String findByIdQuery = "SELECT * FROM users WHERE id = ?";
     String query = "INSERT INTO users (username, id, password) VALUES (?,?,?)";
     
     try (Connection conn = DbConnectionManager.getConnection()){
       String password_hash = passwordService.hashPassword(password);
-      PreparedStatement stmt = conn.prepareStatement(query);
-      stmt.setString(1, username);
-      stmt.setInt(2, id);
-      stmt.setString(3, password_hash);
+      PreparedStatement findStmt = conn.prepareStatement(findByIdQuery);
+      findStmt.setInt(1, id);
+      ResultSet findRs = findStmt.executeQuery();
+      if (findRs != null) {
+        System.out.println("this id already existed! Must use unique id.");
+        return 0;
+      }
 
-      int rs = stmt.executeUpdate();
+      PreparedStatement insertStmt = conn.prepareStatement(query);
+
+      insertStmt.setString(1, username);
+      insertStmt.setInt(2, id);
+      insertStmt.setString(3, password_hash);
+
+      int rs = insertStmt.executeUpdate();
       return rs;
 
     } catch (Exception e) {
