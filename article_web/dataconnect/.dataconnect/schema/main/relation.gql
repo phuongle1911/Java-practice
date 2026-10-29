@@ -1,0 +1,271 @@
+extend type Article {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Article", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Article` table.
+  """
+  _count: Int! @fdc_generated(from: "Article.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Article` table where the `categoryId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  categoryId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Article.categoryId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Article` table where the `content` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  content_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Article.content", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Article` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Article.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Article` table where the `summary` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  summary_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Article.summary", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Article` table where the `title` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  title_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Article.title", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `categoryId` field in the `Article` table.
+  """
+  categoryId_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Article.categoryId", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `id` field in the `Article` table.
+  """
+  id_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Article.id", purpose: QUERY_SUM)
+  """
+  ✨ Average the `categoryId` field in the `Article` table.
+  """
+  categoryId_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Article.categoryId", purpose: QUERY_AVG)
+  """
+  ✨ Average the `id` field in the `Article` table.
+  """
+  id_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Article.id", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `categoryId` field in the `Article` table.
+  """
+  categoryId_min: Int @fdc_generated(from: "Article.categoryId", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `id` field in the `Article` table.
+  """
+  id_min: Int @fdc_generated(from: "Article.id", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `categoryId` field in the `Article` table.
+  """
+  categoryId_max: Int @fdc_generated(from: "Article.categoryId", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `id` field in the `Article` table.
+  """
+  id_max: Int @fdc_generated(from: "Article.id", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Article.id", purpose: ENTITY_ID)
+}
+extend type Category {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Category", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Category` table.
+  """
+  _count: Int! @fdc_generated(from: "Category.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Category` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Category.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Category` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Category.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Category` table where the `parentId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  parentId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Category.parentId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `id` field in the `Category` table.
+  """
+  id_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Category.id", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `parentId` field in the `Category` table.
+  """
+  parentId_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Category.parentId", purpose: QUERY_SUM)
+  """
+  ✨ Average the `id` field in the `Category` table.
+  """
+  id_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Category.id", purpose: QUERY_AVG)
+  """
+  ✨ Average the `parentId` field in the `Category` table.
+  """
+  parentId_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Category.parentId", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `id` field in the `Category` table.
+  """
+  id_min: Int @fdc_generated(from: "Category.id", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `parentId` field in the `Category` table.
+  """
+  parentId_min: Int @fdc_generated(from: "Category.parentId", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `id` field in the `Category` table.
+  """
+  id_max: Int @fdc_generated(from: "Category.id", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `parentId` field in the `Category` table.
+  """
+  parentId_max: Int @fdc_generated(from: "Category.parentId", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Category.id", purpose: ENTITY_ID)
+}
+extend type User {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `password` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  password_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.password", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `username` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  username_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.username", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `id` field in the `User` table.
+  """
+  id_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "User.id", purpose: QUERY_SUM)
+  """
+  ✨ Average the `id` field in the `User` table.
+  """
+  id_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "User.id", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `id` field in the `User` table.
+  """
+  id_min: Int @fdc_generated(from: "User.id", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `id` field in the `User` table.
+  """
+  id_max: Int @fdc_generated(from: "User.id", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "User.id", purpose: ENTITY_ID)
+}

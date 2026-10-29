@@ -1,0 +1,14 @@
+services:
+  tomcat:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      GOOGLE_APPLICATION_CREDENTIALS: /secrets/serviceAccKey.json
+      CLOUD_SQL_INSTANCE: ${CLOUD_SQL_INSTANCE}
+    volumes:
+      - ./app/src/main/resources/serviceAccKey.json:/secrets/serviceAccKey.json:ro
